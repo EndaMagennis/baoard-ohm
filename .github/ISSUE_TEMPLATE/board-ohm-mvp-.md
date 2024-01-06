@@ -1,7 +1,7 @@
 ---
 name: 'Board Ohm MVP '
-about: Issues to create an MVP for Board Ohm
-title: Must haves
+about: Programming tasks to fulfil MVP
+title: 'TODO: '
 labels: enhancement
 assignees: ''
 
