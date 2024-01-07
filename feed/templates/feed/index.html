@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<!-- index.html content starts here -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-12 mt-3 left">
+      <div class="row">
+        {% for post in post_list %}
+        <div class="post card col-3">
+          <a href="{% url 'post_detail' post.slug %}"
+            ><img
+              src="{%static 'images/default.jpg' %}"
+              class="card-img-top"
+              alt="{{post.title}}"
+          /></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{post.title}} by {{post.author}}</h5>
+            <div class="game-info row">
+              <div class="col">
+                <p class="fs-6">
+                  <i class="fa-solid fa-dice"></i> {{post.get_genre_display}}
+                </p>
+                <p class="fs-6">
+                  <i class="fa-solid fa-clock"></i>
+                  {{post.get_play_time_display}}
+                </p>
+                <p class="fs-6">
+                  <i class="fa-solid fa-people-group"></i>
+                  {{post.get_number_of_players_display}}
+                </p>
+              </div>
+              <div class="col">
+                <p class="fs-6">Ages: {{post.get_age_range_display}}</p>
+                <p class="fs-6">Experience: {{post.get_experience_display}}</p>
+                <p class="fs-6">Cost: {{post.get_price_range_display}}</p>
+              </div>
+              <div class="row">
+                <div class="col">Rating: {{post.get_rating_display}}</div>
+                <div class="col">Likes: {{post.number_of_likes}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li>
+              <a
+                href="?page={{ page_obj.previous_page_number }}"
+                class="page-link"
+                >&laquo; PREV</a
+              >
+            </li>
+            {% endif %} {% if page_obj.has_next %}
+            <li>
+              <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+                NEXT &raquo;</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      {% endif %} {%endfor%}
+    </div>
+    {%endblock%}{% block copyright %} Copyright 2023 Enda Magennis {%endblock%}
+
+    <!-- index.html content ends here -->
+  </div>
+</div>

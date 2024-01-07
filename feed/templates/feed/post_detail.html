@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %} {% load static %} 
+{% load crispy_forms_tags %}
+
+<div class="container">
+<h2>{{ post.title }}</h2>
+<img src="{% static 'images/default.jpg' %}" class="img-fluid" alt="{{post.title}}">
+<p>{{ post.content | safe}}</p>
+</div>
+  {% endblock content %}
+</div>
