@@ -16,3 +16,6 @@ This site is developed for boardgame enthusiasts to share their reviews and expe
 |[#2](https://github.com/EndaMagennis/board-ohm/issues/2)| As a Site User I can open posts so that I can access their full content
 |[#3](https://github.com/EndaMagennis/board-ohm/issues/3)| As a Site User I can Like posts so that I can interact with the site content in a meaningful way
 |[#4](https://github.com/EndaMagennis/board-ohm/issues/4)|As a Site User I can create posts so that I can share my thoughts and opinions about the topic
+|[#5](https://github.com/EndaMagennis/board-ohm/issues/5)|As a User I can create an account so that I can curate and create content on the site|
+|[#6](https://github.com/EndaMagennis/board-ohm/issues/6)|As a Site Admin I can Create, Read, Update and Delete posts so that I can moderate the site content|
+|[#7](https://github.com/EndaMagennis/board-ohm/issues/7)|As a Site User I can Create, Read, Update and Delete my own posts so that I can control my own content|
