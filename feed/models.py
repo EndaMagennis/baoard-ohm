@@ -106,10 +106,19 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+        
 
 
 class Like(models.Model):
-    post_to_like = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name="liked_post")
-    user_who_liked = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user_who_liked")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes", null=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="likes", null=True)
+
+    class Meta:
+        # Prevents a user from liking a post more than once
+        unique_together = ("user", "post")
+
+    def __str__(self):
+        return f"{self.user} likes {self.post}"
+
+    
+
