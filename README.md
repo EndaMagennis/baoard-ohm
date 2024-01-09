@@ -19,3 +19,33 @@ This site is developed for boardgame enthusiasts to share their reviews and expe
 |[#5](https://github.com/EndaMagennis/board-ohm/issues/5)|As a User I can create an account so that I can curate and create content on the site|
 |[#6](https://github.com/EndaMagennis/board-ohm/issues/6)|As a Site Admin I can Create, Read, Update and Delete posts so that I can moderate the site content|
 |[#7](https://github.com/EndaMagennis/board-ohm/issues/7)|As a Site User I can Create, Read, Update and Delete my own posts so that I can control my own content|
+
+## Technologies Used
+
+- ### Languages:
+
+    - [Python 3.12.0](https://www.python.org/downloads/release/python-3120/): used as the primary language used in backend functionality 
+    - [JavaScript](https://www.javascript.com/): used for interactive components
+    - [HTML](https://www.w3schools.com/html/): used to create the skeleton of web pages
+    - [CSS](https://www.w3schools.com/css/): used for styling the web pages
+
+- ### Fameworks and Libraries:
+
+    - [Django 4.2.8](https://docs.djangoproject.com/en/5.0/releases/4.2.8/): Python framework for full-stack development
+    - [jQuery](https://jquery.com/): using AJAX requests to bridge frontend and backend
+    - [Bootstrap](https://getbootstrap.com/): used to create consistent CSS styling
+
+- ### Database:
+
+    - [ElephantSQL](https://www.elephantsql.com/): a cloud based postgreSQL database
+
+- ### Other Tools and Dependencies
+
+    - [Git](https://git-scm.com/): version control for continous development
+    - [Pip](https://pypi.org/project/pip/): python package mangager for installing dependencies
+    - [Gunicorn](https://gunicorn.org/): Unix model which creates Python wsgi Http server
+    - [Psychopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter for the Python
+    - [Django-allauth](https://docs.allauth.org/en/latest/release-notes/recent.html#id11): account creation library for django
+    - [GitHub](https://github.com/): cloud repository for source code
+    - [CodeAnywhere](https://app.codeanywhere.com/): Cloud IDE service used for the majority of development
+    - [VSCode](https://code.visualstudio.com/): Local IDE used as backup
