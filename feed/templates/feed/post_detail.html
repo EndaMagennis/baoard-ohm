@@ -1,9 +1,11 @@
 {% extends 'base.html' %} {% block content %} {% load static %} 
 
-<div class="container">
-<h2>{{ post.title }}</h2>
-<img src="{% static 'images/default.jpg' %}" class="img-fluid" alt="{{post.title}}">
-<p>{{ post.content | safe}}</p>
+<div class="p-4 mb-5">
+  <div class="text-center image-container">
+    <h2 class="text-center"><u>{{ post.title }}</u></h2>
+    <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded" alt="{{post.title}}">
+  </div>
+  <p>{{ post.content | safe}}</p>
 </div>
   {% endblock content %}
 </div>

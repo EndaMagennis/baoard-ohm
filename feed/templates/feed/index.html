@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
+
+<div class="container-fluid">  
   <div class="row">
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3">
@@ -15,7 +16,7 @@
               alt="{{post.title}}"
           /></a>
           <div class="card-body text-center">
-            <h5 class="card-title">{{post.title}} by {{post.author}}</h5>
+            <a class="link-light" href="{% url 'post_detail' post.slug %}"><h5 class="card-title">{{post.title}} by {{post.author}}</h5></a>
             <div class="game-info row">
               <div class="col">
                 <p class="fs-6">
@@ -65,7 +66,7 @@
       </div>
       {% endif %} {%endfor%}
     </div>
-    {%endblock%}{% block copyright %} Copyright 2023 Enda Magennis {%endblock%}
+    {%endblock%}
 
     <!-- index.html content ends here -->
   </div>
