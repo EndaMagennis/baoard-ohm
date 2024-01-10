@@ -20,6 +20,9 @@ from django.urls import path, include
 urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
+    path('create/', include('feed.urls')),
+    path('update/', include('feed.urls')),
+    path('delete/', include('feed.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('', include('feed.urls'), name='feed-urls'),
 ]
