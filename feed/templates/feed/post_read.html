@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<div class="p-4 mb-5">
+  <div class="text-center image-container bg-dark-subtle">
+    <h2 class="text-center p-3"><u>{{ post.title }}</u></h2>
+    <img
+      src="{% static 'images/default.jpg' %}"
+      class="img-fluid rounded p-3"
+      alt="{{post.title}}"
+    />
+  </div>
+  <div class="row border-bottom text-center lh-1 p-3">
+    <div class="col text-end">
+      <p class="fs-6">
+        <i class="fa-solid fa-dice"></i> {{post.get_genre_display}}
+      </p>
+      <p class="fs-6">
+        <i class="fa-solid fa-clock"></i>
+        {{post.get_play_time_display}}
+      </p>
+      <p class="fs-6">
+        <i class="fa-solid fa-people-group"></i>
+        {{post.get_number_of_players_display}}
+      </p>
+    </div>
+    <div class="col text-start">
+      <p class="fs-6">Ages: {{ post.get_age_range_display }}</p>
+      <p class="fs-6">Experience: {{ post.get_experience_display }}</p>
+      <p class="fs-6">Cost: {{ post.get_price_range_display }}</p>
+    </div>
+    <p class="fs-6">Rating: {{ post.get_rating_display }}</p>
+  </div>
+  <div class="text-center mt-3 lh-sm fs-5 ">
+    {{ post.content|safe }} {% endblock content %}
+  </div>
+</div>

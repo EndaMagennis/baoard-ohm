@@ -1,13 +1,20 @@
-{% extends "base.html" %} {% block content %} {% load static %}
+{% extends "base.html" %} {% block content %} {% load static %} 
 
 <!-- index.html content starts here -->
 
-<div class="container-fluid">  
+<div class="container-fluid">
   <div class="row">
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3">
       <div class="row text-center">
-        {% for post in post_list %}
+        {% if user.is_authenticated %}
+        <div class="col-12">
+          <a href="{% url 'post_create' %}" class="btn btn-primary"
+            >Create a new post</a
+          >
+        </div>
+        {% endif %} {% for post in post_list %}
+        <!-- Post -->
         <div class="post card col-12 col-md-6 col-lg-3 secondary">
           <a href="{% url 'post_detail' post.slug %}"
             ><img
@@ -16,7 +23,9 @@
               alt="{{post.title}}"
           /></a>
           <div class="card-body text-center">
-            <a class="link-light" href="{% url 'post_detail' post.slug %}"><h5 class="card-title">{{post.title}} by {{post.author}}</h5></a>
+            <a class="link-light" href="{% url 'post_detail' post.slug %}"
+              ><h5 class="card-title">{{post.title}} by {{post.author}}</h5></a
+            >
             <div class="game-info row">
               <div class="col">
                 <p class="fs-6">
@@ -38,7 +47,11 @@
               </div>
               <div class="row">
                 <div class="col">Rating: {{post.get_rating_display}}</div>
-                <div class="col"><button class="btn like-btn"><i class="fa-regular fa-heart"></i></button>{{post.number_of_likes}}</div>
+                <div class="col">
+                  <button class="btn like-btn">
+                    <i class="fa-regular fa-heart"></i></button
+                  >{{post.number_of_likes}}
+                </div>
               </div>
             </div>
           </div>
