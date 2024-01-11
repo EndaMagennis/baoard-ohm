@@ -20,9 +20,12 @@
   font-family: sans-serif;
 }
 
+.navbar-container {
+  z-index: 2;
+}
+
 /* Styling for Cards */
 .card {
-  z-index: -1;
   position: relative;
   margin: 5px;
   padding: 20px;
