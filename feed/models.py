@@ -27,9 +27,9 @@ PLAYER_COUNT = [
     ("two_to_six", "2-6 Players"),
     ("two_to_eight", "2-8 Players"),
     ("two_to_fifteen", "2-15 Players"),
-    ("two_to_six", "3-6 Players"),
-    ("two_to_eight", "3-8 Players"),
-    ("two_to_fifteen", "3-15 Players"),
+    ("three_to_six", "3-6 Players"),
+    ("three_to_eight", "3-8 Players"),
+    ("three_to_fifteen", "3-15 Players"),
     ("oth", "Other")
 ]
 
@@ -84,6 +84,7 @@ RATING = [
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='user_posts')
     content = models.TextField(max_length=3000)
@@ -119,6 +120,7 @@ class Like(models.Model):
 
     def __str__(self):
         return f"{self.user} likes {self.post}"
+    
 
     
 
