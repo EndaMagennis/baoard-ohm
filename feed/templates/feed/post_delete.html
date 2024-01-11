@@ -1,9 +1,9 @@
-{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %} 
-{% if user.is_authenticated and user == post.author %}
-<div class="container p-3 mb-5 bg-dark-subtle">
-  <div class="row m-3 center">
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
+{% if user.is_authenticated and user == post.author or user.is_superuser %}
+<div class="container p-3 mt-5 bg-dark-subtle text-center">
+  <div class="row m-3">
     <div class="col-12">
-      <h1 class="text-center">Delete Post</h1>
+      <h1 class="text-center">Are you sure?</h1>
     </div>
   </div>
   <div class="row m-3 d-flex">
@@ -11,7 +11,8 @@
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %} {{ form|crispy }}
         <div class="text-center">
-          <button class="btn btn-primary" type="submit">Delete</button>
+          <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+          <button class="btn btn-danger" type="submit">Delete</button>
         </div>
       </form>
     </div>
