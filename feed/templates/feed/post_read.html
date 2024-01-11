@@ -8,12 +8,11 @@
       src="{{ post.image.url }}"
       class="img-fluid rounded p-3"
       alt="{{post.title}}"
-      style="max-width: 500px; max-height: 500px"
     />
     {% endif %}
   </div>
   <div class="row border-bottom text-center lh-1 p-3">
-    <div class="col text-end">
+    <div class="game-info-read col text-end">
       <p class="fs-6">
         <i class="fa-solid fa-dice"></i> {{post.get_genre_display}}
       </p>
@@ -26,15 +25,21 @@
         {{post.get_number_of_players_display}}
       </p>
     </div>
-    <div class="col text-start">
+    <div class="game-info-read col text-start">
       <p class="fs-6">Ages: {{ post.get_age_range_display }}</p>
       <p class="fs-6">Experience: {{ post.get_experience_display }}</p>
       <p class="fs-6">Cost: {{ post.get_price_range_display }}</p>
     </div>
-    <p class="fs-6">Rating: {{ post.get_rating_display }}</p>
+    <p class="fs-6 rating">Rating: {{ post.get_rating_display }}</p>
+  </div>
+  <div class="likes">
+    <p class="fs-6 text-start ml-4 mb-0">
+      <a href="" class="like-button btn"><i class="fa-regular fa-heart"></i></a>
+      {{ post.likes.count }}
+    </p>
   </div>
   <div
-    class="text-block text-center p-4 m-4 fs-4"
+    class="text-block text-center p-2 m-2 fs-4"
     style="align-content: center"
   >
     <p>{{ post.content|safe|linebreaks }}</p>

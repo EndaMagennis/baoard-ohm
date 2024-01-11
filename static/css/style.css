@@ -28,35 +28,7 @@
   padding: 20px;
   background-color: #1a1a1a;
   border: 1px solid white;
-}
-
-.card-title {
-  margin: 5px;
-  padding: 20px;
-  background-color: #1a1a1a;
-  border-bottom: 1px solid white;
-}
-
-.card-body {
-  margin: 5px;
-  padding: 20px;
-  background-color: #1a1a1a;
-}
-
-.container-fluid {
-  padding: 2px 16px;
-  align-content: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.like-btn::before {
-  color: white;
-}
-
-.like-btn::is-active {
-  color: red;
-  fill: red;
+  min-width: 350px;
 }
 
 .footer {

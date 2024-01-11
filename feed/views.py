@@ -22,10 +22,12 @@ class AddPost(View):
     '''Add a new post'''
 
     def get(self, request: Any) -> Any:
+        '''Render the form'''
         form = PostForm()
         return render(request, "feed/post_create.html", {"form": form})
     
     def post(self, request: Any) -> Any:
+        '''Create a new post'''
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
@@ -69,15 +71,6 @@ class PostUpdate(generic.UpdateView):
             return True
         else:
             return False
-    
-
-    def form_valid(self, form):
-        messages.success(self.request, "Post updated successfully")
-        return super().form_valid(form)
-    
-    def form_invalid(self, form):
-        messages.error(self.request, "Post update failed")
-        return super().form_invalid(form)
     
 
     
