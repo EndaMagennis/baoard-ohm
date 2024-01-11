@@ -1,6 +1,22 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
 <div class="p-4 mb-5 text-center">
+  {% if user.is_authenticated and user == post.author or user.is_superuser %}
+  <div class="row">
+    <div class="col-12 text-end">
+      <a
+        href="{% url 'post_update' post.slug %}"
+        class="btn btn-sm btn-info text-light"
+        ><i class="fa-solid fa-pencil"></i
+      ></a>
+      <a
+        href="{% url 'post_delete' post.slug %}"
+        class="btn btn-sm btn-danger text-light"
+        ><i class="fa-solid fa-trash"></i
+      ></a>
+    </div>
+  </div>
+  {% endif %}
   <div class="text-center image-container bg-dark-subtle">
     <h2 class="text-center p-3"><u>{{ post.title }}</u></h2>
     {% if post.image %}
@@ -30,8 +46,9 @@
       <p class="fs-6">Experience: {{ post.get_experience_display }}</p>
       <p class="fs-6">Cost: {{ post.get_price_range_display }}</p>
     </div>
-    <p class="fs-6 rating">Rating: {{ post.get_rating_display }}</p>
+    <p class="fs-6 rating">Rating: {{ post.get_rating_display }}/ 5</p>
   </div>
+
   <div class="likes">
     <p class="fs-6 text-start ml-4 mb-0">
       <a href="" class="like-button btn"><i class="fa-regular fa-heart"></i></a>
