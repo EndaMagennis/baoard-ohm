@@ -23,5 +23,3 @@ class LikeAdmin(admin.ModelAdmin):
     list_display = ('user', 'post', )
     search_fields = ['user', 'post']
     list_filter = ('post', )
-
-
