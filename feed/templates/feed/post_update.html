@@ -1,12 +1,13 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %} 
 {% if user.is_authenticated and user == post.author or user.is_superuser %}
-<div class="container p-3 mb-5 bg-dark-subtle">
-  <div class="row m-3 center">
-    <div class="col-12">
+<div class="container p-4 mb-5 bg-dark-subtle">
+  <div class="row mt-5 center">
+    <div class="col-12 my-3">
       <h1 class="text-center">Update Post</h1>
     </div>
+    <hr>
   </div>
-  <div class="row m-3 d-flex">
+  <div class="row mb-5 d-flex">
     <div class="form-group">
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %} {{ form|crispy }}
@@ -19,7 +20,7 @@
   </div>
 </div>
 {% else %}
-<div class="container p-3 mb-5 bg-dark-subtle">
+<div class="container mb-5 bg-dark-subtle">
   <div class="row m-3 center">
     <div class="col-12">
       <h1 class="text-center">You're not authorised to do that</h1>

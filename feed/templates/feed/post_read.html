@@ -54,14 +54,14 @@
     <p class="fs-6 rating">Rating: {{ post.get_rating_display }}/ 5</p>
   </div>
 
-  <div class="likes">
-    <p class="fs-6 text-center ml-4 mb-0">
+  <div class="likes mt-4">
+    <p class="fs-6 text-center">
       <a href="" class="like-button btn"><i class="fa-regular fa-heart"></i></a>
       {{ post.likes.count }}
     </p>
   </div>
   <div
-    class="text-block text-center p-2 m-2 fs-4 justify-content-center">
+    class="text-block text-center p-2 mb-5 fs-4 justify-content-center">
     <p>{{ post.content|safe|linebreaks }}</p>
     {% endblock content %}
   </div>

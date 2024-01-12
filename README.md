@@ -49,3 +49,30 @@ This site is developed for boardgame enthusiasts to share their reviews and expe
     - [GitHub](https://github.com/): cloud repository for source code
     - [CodeAnywhere](https://app.codeanywhere.com/): Cloud IDE service used for the majority of development
     - [VSCode](https://code.visualstudio.com/): Local IDE used as backup
+
+
+## Features
+
+- ### Minimum Viable Product
+
+    #### Implemented
+
+    - Nav Bar: 
+    - Home Page:
+    - Footer:
+    - Create Post:
+    - Read Post:
+    - Update Post:
+    - Delete Post:
+
+- ### Nice to Have / Future Features
+
+    - Like a post:
+    - Search a post:
+    - Add a comment:
+    - Multiple images for a post:
+
+
+## Design
+
+The nature and ethos of the website is relaxed, casual boardgame reviews and so the pallette is dark, and subtle. Dark mode on devices can reduce blue light exposure and can, in some cases, [reduce eye strain](https://www.eyecarecenter.com/eye-care-resources/is-dark-mode-better-for-your-eyes) so it was the natural choice for a more relaxed website.
