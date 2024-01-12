@@ -113,6 +113,7 @@ class Post(models.Model):
     experience = models.IntegerField(choices=EXPERIENCE, default=1)
     price_range = models.IntegerField(choices=PRICE_RANGE, default=1)
     rating = models.IntegerField(choices=RATING, default=1)
+    likes = models.ManyToManyField(User, related_name="likes", blank=True)
     number_of_likes = models.IntegerField(default=0)
 
     class Meta:
@@ -120,19 +121,6 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
-        
-
-
-class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes", null=True)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="likes", null=True)
-
-    class Meta:
-        # Prevents a user from liking a post more than once
-        unique_together = ("user", "post")
-
-    def __str__(self):
-        return f"{self.user} likes {self.post}"
     
 
     

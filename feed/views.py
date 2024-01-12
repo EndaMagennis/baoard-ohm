@@ -1,8 +1,9 @@
 from typing import Any
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.contrib import messages
-from django.contrib.sessions.models import Session
+from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
 from .models import Post
 from .forms import PostForm
@@ -90,3 +91,23 @@ class PostDelete(generic.DeleteView):
         return super().post(request, *args, **kwargs)
     
 
+
+@login_required
+def like(request):
+    '''Like a post'''
+    if request.method == "POST":
+        result = ''
+        id = int(request.POST.get("post_id"))
+        post = get_object_or_404(Post, id=id)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+            post.number_of_likes -= 1
+            result = post.number_of_likes
+            post.save()
+        else:
+            post.likes.add(request.user)
+            post.number_of_likes += 1
+            result =  post.number_of_likes
+            post.save()
+
+        return JsonResponse({"result": result})

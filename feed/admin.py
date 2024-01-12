@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Like
+from .models import Post
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -14,12 +14,3 @@ class PostAdmin(SummernoteModelAdmin):
     list_filter = ('created_on', )
     prepopulated_fields = {'slug': ('title',)}
     summernote_feilds = ('content',)
-
-
-@admin.register(Like)
-class LikeAdmin(admin.ModelAdmin):
-    '''Admin View for Like'''
-
-    list_display = ('user', 'post', )
-    search_fields = ['user', 'post']
-    list_filter = ('post', )
