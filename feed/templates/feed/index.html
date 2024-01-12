@@ -5,25 +5,25 @@
   <div class="row">
     <div class="col-12 my-5 text-center">
       <h1>Welcome to Board-Ohm</h1>
+      <h5>Keeping things zen at the table</h5>
       <div class="mt-3 p-3 text-center">
         <img
           class="image-fluid rounded"
           src="{% static 'images/logo-2.png' %}"
           alt="banner"
           style="max-width: 100%; height: auto"
-
         />
       </div>
       <hr />
       {% if user.is_authenticated %}
-        <div class="mx-3 mt-5 text-center">
-          <a
-            href="{% url 'post_create' %}"
-            class="btn btn-outline-secondary btn-md text-light"
-            ><i class="fa-regular fa-plus light"></i> Add Post
-          </a>
-        </div>
-      {% endif %} 
+      <div class="mx-3 mt-5 text-center">
+        <a
+          href="{% url 'post_create' %}"
+          class="btn btn-outline-secondary btn-md text-light"
+          ><i class="fa-regular fa-plus light"></i> Add Post
+        </a>
+      </div>
+      {% endif %}
       <div class="post-container row d-flex my-3">
         {% for post in post_list %}
         <div class="card post col-12 col-md-6 col-lg-3 my-5 text-center">
@@ -67,8 +67,11 @@
             <p class="card-text fs-6 col-8">
               Rating: {{ post.get_rating_display }} /5
             </p>
-            {% csrf_token %}
-            <button class="like-button btn btn-link text-light col-1" id="like-button" value="{{ post.id }}">
+            <button
+              class="like-button btn btn-link text-light col-1"
+              id="like-button"
+              value="{{ post.id }}"
+            >
               <i class="fa-regular fa-heart"></i>
             </button>
             <span class="col-1 mt-2" id="like-count">{{ post.number_of_likes }}</span>

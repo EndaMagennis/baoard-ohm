@@ -13,7 +13,7 @@
         {% csrf_token %} {{ form|crispy }}
         <div class="text-center">
           <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-primary">Back</a>
-          <button class="btn btn-primary" type="submit">Post</button>
+          <button class="btn btn-success" type="submit">Post</button>
         </div>
       </form>
     </div>
@@ -26,6 +26,6 @@
       <h1 class="text-center">You're not authorised to do that</h1>
     </div>
   </div>
-  {% endif %}
+  {% endif %} 
   {% endblock %}
 </div>

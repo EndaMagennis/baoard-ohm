@@ -55,10 +55,10 @@
   </div>
 
   <div class="likes mt-4">
-    <p class="fs-6 text-center">
-      <a href="" class="like-button btn"><i class="fa-regular fa-heart"></i></a>
-      {{ post.likes.count }}
-    </p>
+    <button class="like-button btn btn-link text-light" id="like-button" value="{{ post.id }}">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+    <span id="like-count">{{ post.number_of_likes }}</span>
   </div>
   <div
     class="text-block text-center p-2 mb-5 fs-4 justify-content-center">
