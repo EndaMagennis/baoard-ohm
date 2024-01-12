@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-
-<div class="p-4 mb-5 text-center justify-content-center">
+<div class="p-4 mt-5 text-center justify-content-center">
   {% if user.is_authenticated and user == post.author or user.is_superuser %}
   <div class="row">
     <div class="col-12 text-end">
@@ -56,15 +55,13 @@
   </div>
 
   <div class="likes">
-    <p class="fs-6 text-start ml-4 mb-0">
+    <p class="fs-6 text-center ml-4 mb-0">
       <a href="" class="like-button btn"><i class="fa-regular fa-heart"></i></a>
       {{ post.likes.count }}
     </p>
   </div>
   <div
-    class="text-block text-center p-2 m-2 fs-4 justify-content-center"
-    style="align-content: center"
-  >
+    class="text-block text-center p-2 m-2 fs-4 justify-content-center">
     <p>{{ post.content|safe|linebreaks }}</p>
     {% endblock content %}
   </div>
