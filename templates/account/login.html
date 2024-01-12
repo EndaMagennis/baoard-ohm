@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% load i18n %} {% load account socialaccount %} 
 {% block head_title %}{% trans "Sign In" %} {% endblock %} 
-{% block content %}
-
+{% block content %} {% load static %}
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 p-4 offset-md-2 bg-dark-subtle">
@@ -12,6 +11,13 @@
         <a class="link" href="{{ signup_url }}">sign up</a> first. 
         {% endblocktrans %}
       </p>
+    </div>
+    <div class="mt-3 text-center">
+      <img
+        class="image-fluid rounded"
+        src="{% static 'images/logo-4-mini.png' %}"
+        alt="banner"
+      />
     </div>
   </div>
   <div class="row">
@@ -24,7 +30,10 @@
           value="{{ redirect_field_value }}"
         />
         {% endif %}
-        <button class="btn btn-info right mb-5" type="submit">
+        <button
+          class="btn btn-outline-secondary right mb-5 text-light"
+          type="submit"
+        >
           {% trans "Sign In" %} <i class="fa-solid fa-caret-right"></i>
         </button>
       </form>
