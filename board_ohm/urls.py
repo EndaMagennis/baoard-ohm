@@ -27,7 +27,6 @@ urlpatterns = [
     path('delete/', include('feed.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('', include('feed.urls'), name='feed-urls'),
-    path('like/', include('feed.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
