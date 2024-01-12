@@ -76,5 +76,10 @@ img{
   .card {
     min-width: 300px;
   }
+
+  img {
+    max-width: 300px;
+    max-height: 300px;
+  }
   
 }
