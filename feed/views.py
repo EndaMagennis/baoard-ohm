@@ -26,7 +26,7 @@ class AddPost(View):
         '''Render the form'''
         form = PostForm()
         return render(request, "feed/post_create.html", {"form": form})
-    
+
     def post(self, request: Any) -> Any:
         '''Create a new post'''
         form = PostForm(request.POST, request.FILES)
@@ -36,18 +36,22 @@ class AddPost(View):
             post.slug = slugify(post.title)
             post.image = request.FILES.get("image")
             post.save()
-            messages.add_message(request, messages.SUCCESS, "Post created successfully")
+            messages.add_message(
+                    request, messages.SUCCESS, "Post created successfully")
             return redirect("home")
         else:
-            messages.add_message(request, messages.ERROR, "Post creation failed")
+            messages.add_message(
+                    request, messages.ERROR, "Post creation failed")
             return render(request, "feed/post_create.html", {"form": form})
+
 
 class PostRead(generic.DetailView):
     '''Read a post'''
 
     model = Post
     template_name = "feed/post_read.html"
-    
+
+
 class PostUpdate(generic.UpdateView):
     '''Update a post'''
 
@@ -63,18 +67,18 @@ class PostUpdate(generic.UpdateView):
             return True
         else:
             return False
-    
+
     def update_post(self, request):
         '''Update the post'''
-        form = self.form_class(request.POST, request.FILES, instance=self.get_object())
+        form = self.form_class(
+            request.POST, request.FILES, instance=self.get_object())
         if form.is_valid():
             form.save()
             return True
         else:
             return False
-    
 
-    
+
 class PostDelete(generic.DeleteView):
     '''Delete a post'''
 
@@ -85,8 +89,7 @@ class PostDelete(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, "Post deleted successfully")
         return super().delete(request, *args, **kwargs)
-    
+
     def post(self, request, *args, **kwargs):
         messages.error(self.request, "Post deletion failed")
         return super().post(request, *args, **kwargs)
-

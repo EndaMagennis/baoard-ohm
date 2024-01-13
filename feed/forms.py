@@ -14,7 +14,7 @@ class PostForm(forms.ModelForm):
         labels = {
             'title': 'Title',
             'content': 'Content',
-            'image': 'Image (If no image is selected, a default image will be used)',
+            'image': 'Image (If no image is selected, a default image will be used)',  # noqa
             'genre': 'Genre',
             'number_of_players': 'Number of Players',
             'age_range': 'Age Range',
@@ -23,11 +23,11 @@ class PostForm(forms.ModelForm):
             'price_range': 'Price Range',
             'rating': 'Rating',
         }
-        
+
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control',}),
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
-            'image': forms.FileInput(attrs={'class': 'form-control',}),
+            'image': forms.FileInput(attrs={'class': 'form-control'}),
             'genre': forms.Select(attrs={'class': 'form-control'}),
             'number_of_players': forms.Select(attrs={'class': 'form-control'}),
             'age_range': forms.Select(attrs={'class': 'form-control'}),
