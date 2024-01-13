@@ -2,7 +2,7 @@
 
 ![banner](documentation/logo-designs/logo-4.png)
 
-Board-Ohm, found [here](https://board-ohm-5d4ddb906f72.herokuapp.com/), is a user generated review site for board games. It can be quite a hefty cost to buy a new boardgame so knowing it's right for you is importamt.
+Board-Ohm, found [here](https://board-ohm-5d4ddb906f72.herokuapp.com/), is a user generated review site for board games. It can be quite a hefty cost to buy a new boardgame so knowing it's right for you is important.
 
 ## User Experience Design
 
@@ -42,8 +42,8 @@ This site is developed for boardgame enthusiasts to share their reviews and expe
   - [ElephantSQL](https://www.elephantsql.com/): a cloud based postgreSQL database
 
 - ### Other Tools and Dependencies
-  - [Git](https://git-scm.com/): version control for continous development
-  - [Pip](https://pypi.org/project/pip/): python package mangager for installing dependencies
+  - [Git](https://git-scm.com/): version control for continuous development
+  - [Pip](https://pypi.org/project/pip/): python package manager for installing dependencies
   - [AllAuth](https://docs.allauth.org/en/latest/): python package for handling account authentication
   - [Gunicorn](https://gunicorn.org/): Unix model which creates Python wsgi Http server
   - [Psychopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter for the Python
@@ -67,7 +67,7 @@ Please refer to the [FEATURES.md](FEATURES.md)
 
 ## Design
 
-The app is mainly comprised of native bootstarap classes, utilising Bootstrap's dark-mode to create a muted and clean UI. The nature and ethos of the website is relaxed, casual boardgame reviews and so the pallette is dark, and subtle. Dark mode on devices can reduce blue light exposure and can, in some cases, [reduce eye strain](https://www.eyecarecenter.com/eye-care-resources/is-dark-mode-better-for-your-eyes) so it was the natural choice for a more relaxed website. Additionally, the name, board-ohm is a play on boredom and the zen phrase 'ohm', a chant often associated with buddhism. The banner image was generated with [Leonardo AI](https://leonardo.ai/) and then colour-corrected and edited using [GIMP](https://www.gimp.org/), and depcits a rendition of buddha surrounded by dice to marry the two concepts of boardgames and zen.
+The app is mainly comprised of native Bootstrap classes, utilising Bootstrap's dark-mode to create a muted and clean UI. The nature and ethos of the website is relaxed, casual boardgame reviews and so the pallette is dark, and subtle. Dark mode on devices can reduce blue light exposure and can, in some cases, [reduce eye strain](https://www.eyecarecenter.com/eye-care-resources/is-dark-mode-better-for-your-eyes) so it was the natural choice for a more relaxed website. Additionally, the name, board-ohm is a play on boredom and the zen phrase 'ohm', a chant often associated with buddhism. The banner image was generated with [Leonardo AI](https://leonardo.ai/) and then colour-corrected and edited using [GIMP](https://www.gimp.org/), and depicts a rendition of buddha surrounded by dice to marry the two concepts of boardgames and zen.
 
 - ### Color Theme
 
@@ -99,13 +99,13 @@ Ultimately, the first, second and fourth drafts were used in the project.
 
 - ### Typography
 
-  Within the primary font, Space Grotesk, the letters 'g' and 'y' contain sharply cut angles, while the captials 'D' and 'B' have hoverhang, which combine to create a font the is evocative of sanskrit; maitaining the theme of zen while remaining readble.
+  Within the primary font, Space Grotesk, the letters 'g' and 'y' contain sharply cut angles, while the captials 'D' and 'B' have overhang, which combine to create a font that is evocative of sanskrit; maintaining the theme of zen while remaining readable.
 
   - #### Space Grotesk
 
     ![space grotesk font sample](documentation/typography/space-grotesk.png)
 
-  The fallback font, Barlow condensed, is a stylised font which I feel has a clean and sharp typography which would fit nicely within the site.
+  The fallback font, Barlow Condensed, is a stylised font which I feel has a clean and sharp typography which would fit nicely within the site.
 
   - #### Barlow Condensed
 
@@ -122,8 +122,7 @@ Ultimately, the first, second and fourth drafts were used in the project.
 
     ![desktop view home](documentation/wireframes/Web-%20Home%20Page.png)
 
-  While the final design is different to the original concept, the overall aesthectic was maintained. The dropdown menu, card style posts, and pagination persists, though the layout of each element varies slightly from the original vision.
-
+  While the final design is different to the original concept, the overall aesthetic was maintained. The dropdown menu, card style posts, and pagination persists, though the layout of each element varies slightly from the original vision.
 
 ## Information Architecture
 
@@ -157,7 +156,7 @@ Please refer to [TESTING.md](TESTING.md)
 - [Leonardo AI](https://leonardo.ai/): for helping to generate a logo
 - [Codemy](https://www.youtube.com/@Codemycom): used to implement like functionality with Ajax(deprecated)
 - [Cryce Truly](https://www.youtube.com/watch?v=3SKjPppM_DU): Custom error handling
-- [Think Thank](https://www.youtube.com/watch?v=oX_XKlPJAQk&t=273s): Aslo custom error handling
+- [Think Thank](https://www.youtube.com/watch?v=oX_XKlPJAQk&t=273s): Also custom error handling
 - [Iuliia Konovalova](https://github.com/IuliiaKonovalova): my mentor who provided explanation for implementing class based views instead of function based views.
 - [GoFullPage](chrome://extensions/): can be found on Google Chrome extensions. Captures a full page view of any webpage, the images of which were used throughout documentation
 - [Code Institute Pep8 linter](pep8ci.herokuapp.com): allowing me to pep8 validate my python.
