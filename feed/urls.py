@@ -8,3 +8,6 @@ urlpatterns = [
     path('<slug:slug>/update/', views.PostUpdate.as_view(), name='post_update'),
     path('<slug:slug>/delete/', views.PostDelete.as_view(), name='post_delete'),
 ]
+
+handler404 = 'board_ohm.views.handler404'
+handler500 = 'board_ohm.views.handler500'

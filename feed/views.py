@@ -89,7 +89,6 @@ class PostDelete(generic.DeleteView):
     def post(self, request, *args, **kwargs):
         messages.error(self.request, "Post deletion failed")
         return super().post(request, *args, **kwargs)
-    
 
 
 # @login_required
