@@ -15,7 +15,7 @@
   <div class="text-center image-container align-items-center">
     <h2 class="text-center p-3"><u>{{ post.title }}</u></h2>
     {% if post.image %}
-    <img src="{{ post.image.url }}" class="img-fluid rounded border border-white"alt="{{post.title}}">
+    <img src="{{ post.image.url }}" class="img-fluid rounded border border-white" alt="{{post.title}}">
     {% else %}
     <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded border border-white" alt="{{post.title}}">
     {% endif %}
@@ -42,7 +42,7 @@
     <p class="fs-6 rating">Rating: {{ post.get_rating_display }}/ 5</p>
   </div>
   <div class="text-block text-center p-2 mb-5 fs-4 justify-content-center">
-    <p>{{ post.content|safe|linebreaks }}</p>
-    {% endblock content %}
+    {{ post.content|safe|linebreaks }}
   </div>
 </div>
+{% endblock content %}
