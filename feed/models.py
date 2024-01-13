@@ -113,8 +113,6 @@ class Post(models.Model):
     experience = models.IntegerField(choices=EXPERIENCE, default=1)
     price_range = models.IntegerField(choices=PRICE_RANGE, default=1)
     rating = models.IntegerField(choices=RATING, default=1)
-    likes = models.ManyToManyField(User, related_name="likes", blank=True)
-    number_of_likes = models.IntegerField(default=0)
 
     class Meta:
         ordering = ["created_on"]

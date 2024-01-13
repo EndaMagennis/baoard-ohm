@@ -90,23 +90,3 @@ class PostDelete(generic.DeleteView):
         messages.error(self.request, "Post deletion failed")
         return super().post(request, *args, **kwargs)
 
-
-# @login_required
-# def like(request):
-#     '''Like a post'''
-#     if request.method == "POST":
-#         result = ''
-#         id = int(request.POST.get("post_id"))
-#         post = get_object_or_404(Post, id=id)
-#         if post.likes.filter(id=request.user.id).exists():
-#             post.likes.remove(request.user)
-#             post.number_of_likes -= 1
-#             result = post.number_of_likes
-#             post.save()
-#         else:
-#             post.likes.add(request.user)
-#             post.number_of_likes += 1
-#             result =  post.number_of_likes
-#             post.save()
-
-#         return JsonResponse({"result": result})

@@ -64,17 +64,9 @@
               Cost: {{ post.get_price_range_display }} <br />
             </p>
             <hr />
-            <p class="card-text fs-6 col-8">
+            <p class="card-text fs-6 col-12">
               Rating: {{ post.get_rating_display }} /5
             </p>
-            <button
-              class="like-button btn btn-link text-light col-1"
-              id="like-button"
-              value="{{ post.id }}"
-            >
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <span class="col-1 mt-2" id="like-count">{{ post.number_of_likes }}</span>
           </div>
           {% if user.is_authenticated and user == post.author or user.is_superuser %}
           <div class="row">
