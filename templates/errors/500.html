@@ -2,16 +2,17 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-md-12 my-5">
-      <img src="{% static 'images/logo.png' %}" alt="500" class="img-fluid" />
+      <img src="{% static 'images/logo.png' %}" alt="500" class="img-fluid">
       <h1>500</h1>
       <p>
-        The server is not very chill. Try something different.
-        This error is often caused by a title being the same as another but with different capitalization.
+        The server is not very chill. Try something different. This error is
+        often caused by a title being the same as another but with different
+        capitalization.
       </p>
-      <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-secondary"
-        >Back to previous page</a
-      >
-      <a href="{% url 'home' %}" class="btn btn-primary">Go back to home</a>
+      <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-secondary">
+        Back to previous page
+      </a>
+      <a href="{% url 'home' %}" class="btn btn-primary">Back to home</a>
     </div>
   </div>
 </div>

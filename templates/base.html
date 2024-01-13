@@ -2,50 +2,39 @@
 {% url 'account_login' as login_url %} 
 {% url 'account_signup' as signup_url %} 
 {% url 'account_logout' as logout_url %}
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
   <head>
     {% block meta %} {% comment %} Required meta tags {% endcomment %}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A user-generated review site for boardgames"
-    />
-    <meta
-      name="keywords"
-      content="games, boardgames, reviews, games reviews, boardgames reviews, table-top, role-playing games, action, adventure, strategy, party games, game genres"
-    />
-    <meta name="author" content="Enda Magennis" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A user-generated review site for boardgames">
+    <meta name="keywords" 
+          content="games, boardgames, reviews, games reviews, boardgames reviews, table-top, role-playing games, action, adventure, strategy, party games, game genres">
+    <meta name="author" content="Enda Magennis">
     {% comment %} Favicon {% endcomment %} {% endblock%} {% block extra_meta %}
     {% endblock%} {% block corecss %} {% comment %} Link to css {% endcomment %}
     <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
     <!-- jquery ui css -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
-    />
+    >
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %} {% block extra_css %} {% endblock %} {% block jslibraries %}
-    <script
-      src="https://kit.fontawesome.com/e7df50eaa1.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/e7df50eaa1.js" crossorigin="anonymous"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+      referrerpolicy="no-referrer">
+    </script>
     {% endblock %} {% block corejs %} {% endblock %}
 
     <title>Board-Ohm {% block extra_title %}{% endblock %}</title>
@@ -54,9 +43,7 @@
   <body>
     <!--Navigation-->
     <nav class="navbar navbar-expand-lg">
-      <div
-        class="navbar-container container-fluid bg-dark-subtle border-bottom border-light"
-      >
+      <div class="navbar-container container-fluid bg-dark-subtle border-bottom border-light">
         <a class="navbar-brand" href="{% url 'home' %}">Board-Ohm</a>
         <button
           class="navbar-toggler bg-dark-subtle"
@@ -69,43 +56,34 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse bg-dark-subtle p-3"
-          id="navbarSupportedContent"
-        >
+        <div class="collapse navbar-collapse bg-dark-subtle p-3" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="{% url 'home' %}"
-                >Home</a
-              >
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                Home
+              </a>
             </li>
             {%if user.is_authenticated%}
             <li class="nav-item">
-              <a
-                class="nav-link {%if request.path == logout_url%}active{%endif%}"
-                href="{% url 'account_logout' %}"
-                >Logout</a
-              >
+              <a class="nav-link {%if request.path == logout_url%}active{%endif%}"
+                href="{% url 'account_logout' %}">
+                Logout
+              </a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == signup_url %}active{% endif %}"
+              <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
                 aria-current="page"
-                href="{% url 'account_signup' %}"
-                >Register</a
-              >
+                href="{% url 'account_signup' %}">
+                Register
+              </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == login_url %}active{% endif %}"
+              <a class="nav-link {% if request.path == login_url %}active{% endif %}"
                 aria-current="page"
-                href="{% url 'account_login' %}"
-                >Login</a
-              >
+                href="{% url 'account_login' %}">
+                Login
+              </a>
             </li>
             {% endif %}
           </ul>
@@ -125,31 +103,29 @@
     <!--Footer-->
     <footer class="footer dark-bg border-top border-light mt-5 position-fixed">
       <p class="m-0 text-center">
-        {% block copyright %}Created By | Enda Magennis | 2024{% endblock copyright %}
+        {% block copyright %}Created By | Enda Magennis | 2024{% endblock
+        copyright %}
       </p>
       <p class="m-0 text-center">
         Follow us:
-        <a
-          href="https://github.com/EndaMagennis"
+        <a href="https://github.com/EndaMagennis"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="Link to GitHub(opens new tab)"
-          ><i class="fa-brands fa-github ms-3"></i
-        ></a>
-        <a
-          href="https://twitter.com/home"
+          aria-label="Link to GitHub(opens new tab)">
+          <i class="fa-brands fa-github ms-3"></i>
+        </a>
+        <a href="https://twitter.com/home"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="Link to Twitter(opens new tab)"
-          ><i class="fa-brands fa-twitter ms-3"></i
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/enda-magennis-5414661b4/"
+          aria-label="Link to Twitter(opens new tab)">
+          <i class="fa-brands fa-twitter ms-3"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/enda-magennis-5414661b4/"
           target="_blank"
           rel="noreferrer noopener"
-          aria-label="Link to LinkedIn(opens new tab)"
-          ><i class="fa-brands fa-linkedin ms-3"></i
-        ></a>
+          aria-label="Link to LinkedIn(opens new tab)">
+          <i class="fa-brands fa-linkedin ms-3"></i>
+        </a>
       </p>
     </footer>
 
@@ -157,8 +133,8 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
     <script src="{%static 'js/script.js' %}"></script>
   </body>
 </html>
