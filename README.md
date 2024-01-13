@@ -1,10 +1,12 @@
 # [Board-Ohm](https://board-ohm-5d4ddb906f72.herokuapp.com/)
 
-Board-Ohm is a user generated review site for board games. It can be quite a hefty cost to buy a new boardgame so knowing it's right for you is importamt.
+![banner](documentation/logo-designs/logo-4.png)
+
+Board-Ohm, found [here](https://board-ohm-5d4ddb906f72.herokuapp.com/), is a user generated review site for board games. It can be quite a hefty cost to buy a new boardgame so knowing it's right for you is importamt.
 
 ## User Experience Design
 
-git ### Strategy
+### Strategy
 
 This site is developed for boardgame enthusiasts to share their reviews and experiences of different boardgames. The primary goal of the app is to allow hobbyists to express their opinions and with social media-lite features.
 
@@ -40,17 +42,23 @@ This site is developed for boardgame enthusiasts to share their reviews and expe
   - [ElephantSQL](https://www.elephantsql.com/): a cloud based postgreSQL database
 
 - ### Other Tools and Dependencies
-
   - [Git](https://git-scm.com/): version control for continous development
   - [Pip](https://pypi.org/project/pip/): python package mangager for installing dependencies
+  - [AllAuth](https://docs.allauth.org/en/latest/): python package for handling account authentication
   - [Gunicorn](https://gunicorn.org/): Unix model which creates Python wsgi Http server
   - [Psychopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter for the Python
   - [Django-allauth](https://docs.allauth.org/en/latest/release-notes/recent.html#id11): account creation library for django
   - [GitHub](https://github.com/): cloud repository for source code
   - [CodeAnywhere](https://app.codeanywhere.com/): Cloud IDE service used for the majority of development
+  - [Heroku](https://id.heroku.com/login): Used to deploy the webisite
   - [VSCode](https://code.visualstudio.com/): Local IDE used as backup
   - [Leonardo AI](https://leonardo.ai/): Used to generate the idea for the logo
   - [GIMP](https://www.gimp.org/): Used to color-correct, edit and personalise the logo
+  - [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): used to debug 
+  - [Font Awesome](https://fontawesome.com/): used to supply icons
+  - [W3C Validator](https://validator.w3.org/): HTML validator
+  - [W3C CSS validator](https://jigsaw.w3.org/css-validator/): CSS validator
+  - [Code Institute Pep8 linter](pep8ci.herokuapp.com): python validation
 
 ## Features
 
@@ -114,6 +122,51 @@ Ultimately, the first, second and fourth drafts were used in the project.
 
     ![desktop view home](documentation/wireframes/Web-%20Home%20Page.png)
 
-  While the final design is different to the original concept, the overall aesthectic was maintained. The dropdown menu, like button, card style posts, and pagination persists, though the layout of each element varies from the original vision.
+  While the final design is different to the original concept, the overall aesthectic was maintained. The dropdown menu, card style posts, and pagination persists, though the layout of each element varies slightly from the original vision.
+
+
+## Information Architecture
+
+### Database
+
+  - The database created and hosted on [ElephantSQL](https://www.elephantsql.com/)
+
+### Entity Relationship Diagrams
+
+  - The ERD was created using [Lucidchart](https://lucid.co/)
+
+  - ![entity relationship diagram](documentation/wireframes/basic%20ERD.png)
+
+
+## Testing
+
+Please refer to [TESTING.md](TESTING.md)
+
+## Deployment
+
+- The site was deployed using [Heroku](https://id.heroku.com/login)
+- The database was deployed to [ElephantSQL](https://www.elephantsql.com/)
+- The app is available [here](https://board-ohm-5d4ddb906f72.herokuapp.com/)
+
+## Credits
+
+- [CodeInstiute](https://codeinstitute.net/ie/): for giving me the basics of django development used in the site
+- [Bootstrap](https://getbootstrap.com/): for giving me the classes for basic and clean styling used in the site
+- [Django](https://www.djangoproject.com/): for basic templates and fuctionality used in the site 
+- [Font Awesome](https://fontawesome.com/): for icons used in the site
+- [Leonardo AI](https://leonardo.ai/): for helping to generate a logo
+- [Codemy](https://www.youtube.com/@Codemycom): used to implement like functionality with Ajax(deprecated)
+- [Cryce Truly](https://www.youtube.com/watch?v=3SKjPppM_DU): Custom error handling
+- [Think Thank](https://www.youtube.com/watch?v=oX_XKlPJAQk&t=273s): Aslo custom error handling
+- [Iuliia Konovalova](https://github.com/IuliiaKonovalova): my mentor who provided explanation for implementing class based views instead of function based views.
+- [GoFullPage](chrome://extensions/): can be found on Google Chrome extensions. Captures a full page view of any webpage, the images of which were used throughout documentation
+- [Code Institute Pep8 linter](pep8ci.herokuapp.com): allowing me to pep8 validate my python.
+
+## Acknowledgements
+
+- [Iuliia Konovalova](https://github.com/IuliiaKonovalova): my mentor who continually motivates me to go big.
+- [Claire Heneghan](https://github.com/HeneghanC): who helped test the site by creating an account and posting
+- Family and friends who created accounts and posts to help with testing
+- [CodeInstiute](https://codeinstitute.net/ie/): for giving me the tools and knoweldge
 
 
